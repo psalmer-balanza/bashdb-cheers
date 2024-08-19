@@ -1,0 +1,218 @@
+
+*{
+  margin: 0;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff; /* Cream background */
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Created by Bruce Balderas */
+.logadd{
+  display: flex;
+  position: absolute;
+  bottom:40px;
+}
+/* Created by Bruce Balderas */
+.logout-btn{
+  margin-left: 10px;
+  margin-bottom: 30px;
+  background-color: #073066;
+  width: 120px;
+  font-size: 20px;
+  padding: 10px;
+  color: white;
+  border-radius: 4px; 
+}
+/* Created by Bruce Balderas */
+.add{
+  position:fixed;
+  right: 40px;
+  bottom: 120px;
+}
+/* Created by Bruce Balderas */
+.add-user-button {
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 60px;
+  text-decoration: none;
+  color:white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: #2ecc71;
+}
+/* Created by Bruce Balderas */
+.add-user-button:hover{
+  text-decoration: underline;
+  background-color: #7dc29a; 
+}
+/* Created by Bruce Balderas */
+#content {
+  flex: 1;
+  box-sizing: border-box;
+  width: 100vh;
+}
+
+.action-buttons {
+  margin-bottom: 20px;
+}
+
+.edit-button, .delete-button{
+  background-color: #2ecc71; /* Green for buttons */
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-button {
+  background-color: #e74c3c; /* Red for Delete button */
+}
+
+.placeholder-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.placeholder-table th, .placeholder-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.placeholder-table th {
+  background-color: #3498db; /* Blue color for the table header */
+  color: #fff;
+}
+
+.placeholder-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Modal Styles */
+.modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+background-color: #fefefe;
+margin: 15% auto; /* 15% from the top and centered */
+padding: 20px;
+border: 1px solid #888;
+width: 80%; /* Could be more or less, depending on screen size */
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.close {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+
+/* Form Styles */
+.form-group {
+margin-bottom: 10px;
+}
+
+input[type=password] {
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+box-sizing: border-box;
+}
+
+.apply-button, .cancel-button {
+background-color: #4CAF50; /* Green */
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 100%;
+}
+
+.cancel-button {
+background-color: #f44336; /* Red */
+}
+
+/* Add or modify the following styles if needed */
+
+.confirm-delete-button, .cancel-delete-button {
+background-color: #3498db; /* Blue for confirm button */
+color: #fff;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 5px;
+margin-right: 5px;
+}
+
+.confirm-delete-button {
+background-color: #e74c3c; /* Red for confirm button */
+}
+
+.cancel-delete-button {
+background-color: #95a5a6; /* Grey for cancel button */
+}
+
+.modal-footer {
+text-align: center;
+}
+
+/* Media Queries for Phone Layout */
+@media only screen and (max-width: 600px) {
+  .logadd {
+    flex-direction: column;
+    align-items: center;
+    bottom: 0;
+    position: relative;
+  }
+
+  .logout-btn {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .add {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    margin-top: 20px;
+  }
+
+  .add-user-button {
+    margin-bottom: 20px;
+  }
+
+  .placeholder-table th,
+  .placeholder-table td {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,68 @@
+/* Created by Bruce Balderas */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+/* Created by Bruce Balderas */
+#logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+/* Created by Bruce Balderas */
+body{
+    background-color: white;
+}
+/* Created by Bruce Balderas */
+#refresh-button{
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #010911;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-bottom: 2%;
+    width: 30%;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add transition effect */
+}
+/* Created by Bruce Balderas */
+#refresh-button:hover {
+    background-color: #222425;
+    text-decoration: underline;
+}
+/* Created by Bruce Balderas */
+#video-section {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    width: 55%;
+}
+
+/* Created by Bruce Balderas */
+#mainVideo {
+    width: 95%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Created by Bruce Balderas */
+@media only screen and (max-width: 900px) {
+    /* Created by Bruce Balderas */
+    #video-section {
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-top: 30%;
+        width: 100%;
+    }
+}

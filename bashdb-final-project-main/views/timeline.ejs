@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BashDB Broadcast</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="navigation.js" defer></script>
+    <script src="timeline.js" defer></script>
+    <script src="headerFooterManager.js" defer></script>
+
+</head>
+<body>
+
+    <special-header></special-header>
+    
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="home"><i class='bx bx-home-alt' ></i> Home</a>
+        <a href="timeline"><i class='bx bx-edit-alt' ></i>Queue Videos</a>
+        <a href="history"><i class='bx bx-history' ></i> History logs</a>
+        <form action="logout" method="post" class="logout-form">
+            <button type="submit" class="logout-btn"><i class='bx bx-log-out'></i> Log-out</button>
+        </form>
+      </div>
+      <span class="open" onclick="openNav()"><i class='bx bx-menu'></i></span>
+     
+    <div class ="container">
+      <div class ="queue-list" id="queue-list">
+        <div class="queue-header">
+            <h2>Queue</h2>
+            <button class="btn-add">Add</button>
+        </div>    
+        <div class = "vid active" id="video-queue">
+            <div class = "queue-vid">
+                <video src = "images/Placeholder-vid.mp4" controls autoplay></video>
+                <h3 class ="queueTitle" id="queueTitle"> Video Title Goes Here</h3>
+            </div>
+        </div>
+    </div>
+
+        <div class = "main-video" id ="displayed-video">
+            <div class = "video">
+                <video src = "images/Placeholder-vid.mp4" controls autoplay></video>
+                <h3 class ="displayed-video-title"> Video Title Goes Here</h3>
+            </div>
+        </div>
+
+        <div class ="video-list" id="video-list">
+            <h1>Available Videos:</h1>
+        </div>
+
+        <div class = "goLive">
+            <form action="/method/upload_queue" method="POST">
+                <p>Select Date</p>
+                <div id="datetimepicker-container">
+                    <div id="datetimepicker-popup">
+                        <input type="date" id="date-input" name="selectedDate">
+                    </div>
+                </div>
+                <input type="hidden" id="addedVideos" name="addedVideos">
+                <button type="submit" id="finalize-button" class="finalize-button">Finalize</button>
+            </form>
+        </div>
+        <div class = ""></div>
+        <div class = "upload">
+            <form action="/method/upload_media" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" id="fileInput">
+                <p id="selectedFileName"></p>
+                <input type="submit" name="submit" value="Upload">
+            </form>
+        </div>
+     </div>
+     <special-footer></special-footer>
+     
+</body>
+</html>

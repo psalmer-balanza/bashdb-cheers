@@ -1,0 +1,89 @@
+/* Created by Bruce Balderas */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+}
+/* Created by Bruce Balderas */
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #073066; 
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+/* Created by Bruce Balderas */
+/* The navigation menu links */
+.sidenav a{
+  padding: 10px;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight:bold;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+/* Created by Bruce Balderas */
+/* The logout button for navigation menu */
+.logout-btn{
+  margin-top: 200%;
+  margin-left: 10%;
+  background-color: #004687;
+  padding: 20px 25px 20px 30px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight:bold;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+/* Created by Bruce Balderas */
+.logout-btn:hover{
+  color: black;
+  font-weight: bolder;
+  background-color: white;
+}
+
+/* Created by Bruce Balderas */
+.navBtns a:hover {
+  color: black;
+  font-weight: bolder;
+  background-color: white;
+}
+
+/* Created by Bruce Balderas */
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 40px;
+  margin-left: 50px;
+}
+/* Created by Bruce Balderas */
+.open i{
+  font-size: 50px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+/* Created by Bruce Balderas */
+#main{
+  transition: margin-left .5s;
+  padding: 20px;
+}
+/* Created by Bruce Balderas */
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

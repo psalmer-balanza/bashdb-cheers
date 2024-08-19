@@ -1,0 +1,89 @@
+<!-- Created by Bruce Balderas -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/history.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="navigation.js" defer></script>
+    <script src="headerFooterManager.js" defer></script>
+    <script src="history.js" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+<body>
+    <special-header></special-header>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class = "navBtns">
+            <a href="home"><i class='bx bx-home-alt' ></i> Home</a>
+            <a href="timeline"><i class='bx bx-edit-alt' ></i>Queue Videos</a>
+            <a href="history"><i class='bx bx-history' ></i> History logs</a>
+            <form action="logout" method="post" class="logout-form">
+                <button type="submit" class="logout-btn"><i class='bx bx-log-out'></i> Log-out</button>
+            </form>
+        </div>
+    </div>
+    <span class="open" onclick="openNav()"><i class='bx bx-menu'></i></span>
+    <!-- <div id="overlay"></div> -->
+    <div id = "main">
+        <input type="date" id="selectedDate">
+        <div id = "logs">  
+            <div class = "videoDetails">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Type</th>
+                            <th>Length</th>
+                            <th>Air Start</th>
+                            <th>Air End</th>
+                            <th>Uploader</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scheduledVideosTableBody">
+                        <tr>
+                            <td>placeholder</td>
+                            <td>MP4</td>
+                            <td>0:10</td>
+                            <td>9:00</td>
+                            <td>5:00</td>
+                            <td>CM1</td>
+                        </tr>
+                        <tr>
+                            <td>placeholder</td>
+                            <td>MP4</td>
+                            <td>0:10</td>
+                            <td>9:00</td>
+                            <td>5:00</td>
+                            <td>CM1</td>
+                        </tr>
+                        <tr>
+                            <td>placeholder</td>
+                            <td>MP4</td>
+                            <td>0:10</td>
+                            <td>9:00</td>
+                            <td>5:00</td>
+                            <td>CM1</td>
+                        </tr>
+                        <tr>
+                            <td>placeholder</td>
+                            <td>MP4</td>
+                            <td>0:10</td>
+                            <td>9:00</td>
+                            <td>5:00</td>
+                            <td>CM1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <special-footer></special-footer>
+</body>
+</html>

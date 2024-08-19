@@ -1,0 +1,25 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Preview</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="headerFooterManager.js" defer></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <special-header></special-header>
+    <section id="video-section">
+        <div class="video">
+            <button id="refresh-button">Refresh Stream</button>
+            <video src = "images/see-you.mp4" id="mainVideo" autoplay></video>
+        </div>
+    </section>
+    <special-footer></special-footer>
+</body>
+</html>
