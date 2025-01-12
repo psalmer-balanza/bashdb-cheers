@@ -3,6 +3,8 @@ to run the app
 then 
 `npm run startServer`
 
+Please ensure that the included database is running (preferrably on WampServer)
+
 For streamers:
 1. Navigate to `chrome://flags/#unsafely-treat-insecure-origin-as-secure` in Chrome.
 2. Find and enable the `Insecure origins treated as secure` section (see below).
