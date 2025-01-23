@@ -226,25 +226,39 @@ async function init() {
     element, takes the audio and video and sends it to the server through the peer
     Psalmer
 */
-async function initVideo() {
-    const video = document.getElementById("recordedVideo");
+async function init() {
+    let stream; 
+    try {
+        stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+    } catch (error) {
+        console.error('Error, cannot find video and audio, trying video only:', error.message);
+        try { 
+            stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        } catch (error) {
+            console.error('Error, cannot find video, trying audio only:', error.message);
+            try { 
+                stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            } catch (error) {
+                console.error('Error, cannot find audio only:', error.message);
+            }
+        }
+    }
 
-    await video.play();
-    peer = createPeer();
-    // HTMLMediaElement API
-    const videoStream = video.captureStream();
-    // MediaStream API
-    const videoTrack = videoStream.getVideoTracks()[0];
-    const audioTrack = videoStream.getAudioTracks()[0];
+    if (!stream) {
+        console.error('No stream available.');
+        return; 
+    }
 
-    // Combine video/audio tracks
-    const clonedStream = new MediaStream([videoTrack, audioTrack]);
-    const tracks = clonedStream.getTracks();
-    
-    // Add the stream
+    document.getElementById("mainVideo").srcObject = stream;
+    const peer = createPeer();
+
+    //add the stream
+    const tracks = stream.getTracks();
+
+    //loop through each track
     tracks.forEach(track => {
         //send tracks to server
-        peer.addTrack(track, clonedStream);
+        peer.addTrack(track, stream);
     });
 }
 
