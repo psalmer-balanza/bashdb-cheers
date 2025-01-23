@@ -6,7 +6,7 @@
               <img src="../public/images/logo.png" alt="Logo">
           </div>
           <div class="cheers">
-              <h1>Cheers</h1>
+              <h1>Saint Louis University</h1>
           </div>
           </div>
           <style>
@@ -15,8 +15,10 @@
                 justify-content: center;
                 align-items: center;
                 width: 100%;
-                text-align: center;
+                text-align: left;
                 background-color: #073066;
+                position: fixed;
+                top: 0;
             }
             .logo img {
                 width: 60px;
