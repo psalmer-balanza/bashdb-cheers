@@ -2,7 +2,7 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const session = require('express-session');
 const multer = require('multer');
 const upload = multer({ dest: '/uploads'});
