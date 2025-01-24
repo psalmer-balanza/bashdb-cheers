@@ -107,12 +107,13 @@ app.post('/login', (request, response) => {
 
   connection.query('SELECT * FROM users WHERE username = ?', [username], (err, results) => {
     if (err) {
+      
       response.redirect('/login');
-      return;
+      return false;
     }
     if (results.length === 0) {
       response.redirect('/login');
-      return;
+      return false;
     }
 
     const userProfile = results[0];
