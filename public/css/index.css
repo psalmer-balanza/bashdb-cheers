@@ -1,5 +1,6 @@
 /* Created by Bruce Balderas */
 * {
+    overflow:hidden;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -22,11 +23,10 @@ body{
     padding: 8px 16px;
     border: none;
     border-radius: 4px;
-    margin-left: auto;
-    margin-bottom: 2%;
-    width: 30%;
+    width: 15%;
     text-align: left;
     cursor: pointer;
+    margin: 5% 18.4%;
     transition: background-color 0.3s ease; /* Add transition effect */
 }
 /* Created by Bruce Balderas */
@@ -36,22 +36,17 @@ body{
 }
 /* Created by Bruce Balderas */
 #video-section {
-    display: flex;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2%;
-    width: 55%;
 }
 
 /* Created by Bruce Balderas */
 #mainVideo {
-    width: 95%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 8px;
-    text-align: center;
-    padding: 20px;
+    position: absolute;
+    z-index: -1;
+    top: 15%;
+    left:0;
+    width: 100%;
+    height: 75vh;
 }
 
 /* Created by Bruce Balderas */

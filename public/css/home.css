@@ -39,7 +39,7 @@ body{
     border-radius: 4px;
     margin-left: auto;
     margin-top: 5%;
-    width: 30%;
+    width: 25%;
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-decoration: none;
@@ -58,7 +58,7 @@ body{
     #stream-recorded-video-button, #stream-button {
         background-color: #004687;
         margin-bottom: 100px;
-        width: 50%;
+        width: 20%;
     }
 }
 /* Created by Bruce Balderas */
@@ -78,7 +78,7 @@ body{
         background-color: rgba(255, 255, 255, 0.5);
         border-radius: 8px;
         text-align: center;
-        padding: 20px;
+        padding: 25px;
     }
     /* Created by Bruce Balderas */
     #stream-recorded-video-button, #stream-button {

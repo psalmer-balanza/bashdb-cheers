@@ -8,29 +8,37 @@ class SpecialHeader extends HTMLElement {
               <img src="images/logo.png" alt="Logo">
           </div>
           <div class="cheers">
-              <h1>Cheers</h1>
+              <h1>Saint Louis University</h1>
+              <h2>Baguio City, Philippines</h2>
           </div>
           </div>
           <style>
             .head {
                 width:100%;
                 display: flex;
-                justify-content: center;
                 align-items: center;
                 width: 100%;
-                text-align: center;
+                text-align: left;
                 background-color: #073066;
+                position: fixed;
+                top:0;
             }
             .logo img {
                 width: 60px;
                 height: auto;
+                text-align: left;
             }
             .cheers h1 {
-                text-transform: uppercase;
                 letter-spacing: 1.5px;
                 color: white;
                 margin: 0;
+                font-size: 20px;
             }
+              .cheers h2{
+              text-align: left;
+              color: white;
+              font-size: 10px;
+              }
           </style>
         </header>
       `;
