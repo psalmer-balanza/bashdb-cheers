@@ -105,31 +105,39 @@ app.post('/login', (request, response) => {
   const username = request.body.username;
   const password = request.body.password;
 
+  // Query the database to find the user
   connection.query('SELECT * FROM users WHERE username = ?', [username], (err, results) => {
     if (err) {
-      
-      response.redirect('/login');
-      return false;
+      console.error('Database error:', err);
+      return response.status(500).json({ success: false, error: 'Internal server error' });
     }
+
     if (results.length === 0) {
-      response.redirect('/login');
-      return false;
+      // User not found
+      return response.status(401).json({ success: false, error: 'Invalid username or password' });
     }
 
     const userProfile = results[0];
+
+    // Compare the plaintext password with the stored password
     if (password !== userProfile.password) {
-      response.redirect('../login');
+      // Incorrect password
+      return response.status(401).json({ success: false, error: 'Invalid username or password' });
+    }
+
+    // Password matches, set up session
+    console.log('User logged in:', userProfile.username);
+    request.session.user = { role: userProfile.role, username: userProfile.username };
+
+    // Send response with role-based redirection
+    if (userProfile.role === 'Admin') {
+      return response.json({ success: true, redirect: '/admin' });
     } else {
-      console.log(userProfile.role, userProfile.username);
-      request.session.user = { role: userProfile.role, username: userProfile.username };
-      if(userProfile.role === 'Admin') {
-        response.redirect('/admin'); // Redirect to the admin route
-      } else {
-        response.redirect('/home'); // Redirect to the admin route
-      }
+      return response.json({ success: true, redirect: '/home' });
     }
   });
 });
+
 
 // getting video list from the database
 app.get('/method/get_video_list', (req, res) => {

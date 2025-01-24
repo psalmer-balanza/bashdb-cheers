@@ -1,7 +1,5 @@
 // login ajax using jquery
 
-console.log("login.js is executed!!");
-
 $(document).ready(function () {
     const loginForm = $("#login-form"); // jQuery selector for the form
     const errorMessage = $("#error-message"); // jQuery selector for the error message
