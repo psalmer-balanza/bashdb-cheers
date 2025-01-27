@@ -1,26 +1,114 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="icon" href="images/logo.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Preview</title>
-    <link rel="stylesheet" href="css/index.css">
+    <title>Video Preview with Live Chat</title>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="headerFooterManager.js" defer></script>
     <script src="index.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        section {
+            padding: 0;
+        }
+        #mainVideo {
+            max-width: 100%;
+            height: auto;
+        }
+        .video-container {
+            position: relative;
+            width: 90%;
+            height: auto;
+        }
+        #refresh-button {
+            font-size: 15px; 
+            margin-bottom: 5px;
+            background-color: #073066;
+        }
+
+        .chat-container {
+            width: 50%;
+            max-width: 400px;
+            height: 760px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            margin: 16% -40% 10% 2%
+            
+        }
+        .chat-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        .chat-input {
+            padding: 10px;
+            display: flex;
+            border-top: 1px solid #ddd;
+            background: white;
+        }
+        .chat-input input {
+            flex-grow: 1;
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
     <special-header></special-header>
-    <section id="video-section">
-        <div class="video">
-            <button id="refresh-button">Refresh Stream</button>
-            <video src = "images/see-you.mp4" id="mainVideo" autoplay muted></video>
-            
+    <section>
+        <div class="container-lg my-5 mx-5">
+            <div class="d-flex justify-content-center align-items-center gap-4" style="height: 90vh;">
+                <!-- Video Container -->
+                <div class="video-container">
+                    <button id="refresh-button" class="btn btn-primary btn-sm">Refresh Stream</button>
+                    <video src="images/see-you.mp4" id="mainVideo" autoplay muted></video>
+                    <div id="videoTitle" class="text-left mt-3">
+                        <h3 style="color: #073066;">Sunday Mass January 26, 2025 (3rd Sunday in Ordinary Time)</h3>
+                    </div>
+                </div>
+
+                <!-- Live Chat Container -->
+                <div class="chat-container">
+                    <div class="p-3 text-white text-center" style="background-color: #073066;">
+                        <strong>Live Chat</strong>
+                    </div>                    
+                    <div class="chat-messages" id="chatMessages"></div>
+                    <div class="chat-input">
+                        <input type="text" id="idNumber" class="form-control" placeholder="Enter ID Number">
+                        <input type="text" id="chatMessage" class="form-control" placeholder="Type a message">
+                        <button id="sendMessage" class="btn btn-primary">Send</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    
+
+    <script>
+        document.getElementById("sendMessage").addEventListener("click", function() {
+            let idNumber = document.getElementById("idNumber").value.trim();
+            let message = document.getElementById("chatMessage").value.trim();
+            let chatBox = document.getElementById("chatMessages");
+
+            if (idNumber === "" || message === "") {
+                alert("Please enter your ID number and a message.");
+                return;
+            }
+
+            let messageElement = document.createElement("p");
+            messageElement.innerHTML = <strong>${idNumber}:</strong> ${message};
+            chatBox.appendChild(messageElement);
+
+            document.getElementById("chatMessage").value = "";
+            chatBox.scrollTop = chatBox.scrollHeight;
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
